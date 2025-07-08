@@ -98,6 +98,14 @@ Future<TodoList?> showTodoListDialog(BuildContext context, {TodoList? list}) {
         controller: controller,
         decoration: const InputDecoration(labelText: 'Name'),
       ),
+
+Future<String?> showEditDialog(BuildContext context, String initial) {
+  final controller = TextEditingController(text: initial);
+  return showDialog<String>(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: const Text('Edit Item'),
+      content: TextField(controller: controller),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
@@ -113,6 +121,8 @@ Future<TodoList?> showTodoListDialog(BuildContext context, {TodoList? list}) {
               );
             }
           },
+=======
+          onPressed: () => Navigator.pop(context, controller.text),
           child: const Text('Save'),
         ),
       ],
