@@ -7,6 +7,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  firebase_core: ^1.0.0
+  cloud_firestore: ^2.5.4
 
 flutter:
   uses-material-design: true
