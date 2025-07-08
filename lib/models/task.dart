@@ -1,7 +1,10 @@
 class Task {
   final String id;
   final String title;
+
   final String? description;
+
+
   final DateTime? dueDate;
   bool completed;
   final int priority;
@@ -28,6 +31,11 @@ class Task {
       notes: json['notes'] as String?,
     );
   }
+    required this.title,
+    this.dueDate,
+    this.completed = false,
+  });
+}
 
   Map<String, dynamic> toJson() => {
         'id': id,
